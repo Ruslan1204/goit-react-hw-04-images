@@ -1,5 +1,5 @@
 import css from './Button.module.css';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export const Button = ({ onButton}) => {
   return (
@@ -16,6 +16,6 @@ export const Button = ({ onButton}) => {
   );
 };
 
-Button.ropTypes = {
-  onButton: PropTypes.func.isRequired,
-};
+// Button.ropTypes = {
+//   onButton: PropTypes.func.isRequired,
+// };
