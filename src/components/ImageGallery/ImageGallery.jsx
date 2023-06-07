@@ -1,5 +1,5 @@
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './ImageGallery.module.css';
 
 export const ImageGallery = ({ onImages }) => {
@@ -20,6 +20,6 @@ export const ImageGallery = ({ onImages }) => {
 };
 
 
-// ImageGallery.propTypes = {
-//   onImages: PropTypes.array.isRequired,
-// }
+ImageGallery.propTypes = {
+  onImages: PropTypes.array.isRequired,
+}

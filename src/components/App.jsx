@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 import css from './App.module.css';
@@ -13,13 +13,12 @@ const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '36083710-9df5b372674412c7298f0bb13';
 
 export const App = () => {
-  const isInitRef = useRef(true);
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState('');
   const [page, setPage] = useState(1);
 
-  const fetchData = async (searchText, page) => {
+  const fetchData = async (searchText = '', page = 1) => {
     setIsLoading(true);
     try {
       const { data } = await axios.get(
@@ -36,15 +35,11 @@ export const App = () => {
   };
 
   useEffect(() => {
-    if (!isInitRef.current) {
+    if (searchText !== '') {
       fetchData(searchText, page);
-      console.log('searcText', searchText, page);
-    } else {
-      isInitRef.current = false;
     }
+
   }, [searchText, page]);
-
-
 
   const handleButton = () => {
     setPage(prevState => prevState + 1);
@@ -62,7 +57,7 @@ export const App = () => {
   return (
     <div className={css.app}>
       <Searchbar onSearch={handleSearch} onReset={handleReset} />
-      {searchText !== '' && <ImageGallery onImages={images} />}
+      { <ImageGallery onImages={images} />}
       {isLoading && <Loader />}
       {searchText !== '' && !isLoading && <Button onButton={handleButton} />}
     </div>

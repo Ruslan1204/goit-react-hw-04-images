@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './ImageGalleryItem.module.css';
 import { Modal } from '../Modal/Modal';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const ImageGalleryItem = ({ webformat, largeImage }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,10 +28,10 @@ export const ImageGalleryItem = ({ webformat, largeImage }) => {
   );
 };
 
-// ImageGalleryItem.propTypes = {
-//   webformat:PropTypes.string.isRequired,
-//   largeImage:PropTypes.string.isRequired,
-// }
+ImageGalleryItem.propTypes = {
+  webformat:PropTypes.string.isRequired,
+  largeImage:PropTypes.string.isRequired,
+}
 
 // export class ImageGalleryItem extends Component {
 //   state = {

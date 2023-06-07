@@ -1,12 +1,8 @@
 import css from './Searchbar.module.css';
-// import PropTypes from 'prop-types';
-// import { BsSearch } from 'react-icons/fa/BsSearch';
+import PropTypes from 'prop-types';
 
 import { useState } from 'react';
-// import { ImageGallery } from '../ImageGallery/ImageGallery';
-// import { Button } from '../Button/Button';
 
-// export const Searchbar = ({ onSearch, onSubmit, onChange,omDisabled }) => {
 
 export const Searchbar = ({ onReset, onSearch }) => {
   const [search, setSearch] = useState('');
@@ -33,7 +29,6 @@ export const Searchbar = ({ onReset, onSearch }) => {
     <header className={css.searchbar}>
       <form className={css.searchForm} onSubmit={handleSubmit}>
         <button
-          // disabled={omDisabled !== 1}
           type="submit"
           className={`${css.searchFormButton} ${css.searchFormButtonHover}`}
         >
@@ -55,10 +50,10 @@ export const Searchbar = ({ onReset, onSearch }) => {
   );
 };
 
-// Searchbar.propTypes = {
-//   onSearch: PropTypes.func,
-//   onReset: PropTypes.func,
-// };
+Searchbar.propTypes = {
+  onSearch: PropTypes.func,
+  onReset: PropTypes.func,
+};
 
 // export class Searchbar extends Component {
 //   state = {
